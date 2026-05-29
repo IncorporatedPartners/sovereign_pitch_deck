@@ -926,10 +926,10 @@ const Slide15 = () => (
           <div className="text-[10px] font-bold text-[#F0EEE9]/55 uppercase tracking-widest">CEO & Co-Founder / Architecture</div>
         </div>
         <ul className="space-y-4 text-[13px] text-[#F0EEE9] font-medium leading-relaxed">
-          <li className="flex gap-3 items-start"><Dot/> Identified the $446B participation economy gap in music and built LabelHead's full scoring infrastructure before raising a dollar</li>
-          <li className="flex gap-3 items-start"><Dot/> Deployed an 8-agent AI orchestration system managing VC outreach, sponsor pipeline, content publishing</li>
+          <li className="flex gap-3 items-start"><Dot/> Identified the structural gap between music's $54B ecosystem and sports' $500B — traced it to a missing competitive layer — and built the infrastructure to create it before raising a dollar</li>
+          <li className="flex gap-3 items-start"><Dot/> LabelHead is live: scoring engine operational, Founding Season architecture complete, platform active. Built before the raise, not with it.</li>
           <li className="flex gap-3 items-start"><Dot/> LabelHead is live and operational — scoring engine running, Founding Season infrastructure complete</li>
-          <li className="flex gap-3 items-start"><Dot/> Built the Sovereign strategic framework: two properties, one flywheel</li>
+          <li className="flex gap-3 items-start"><Dot/> Columbia and USC graduate with formal training in finance, investment analysis, and market design — the same discipline he applies to platform architecture and incentive structures</li>
         </ul>
       </div>
       <div className="flex flex-col py-6 border-t border-[#F0EEE9]/20">
@@ -942,6 +942,43 @@ const Slide15 = () => (
           <li className="flex gap-3 items-start"><Dot/> Credits include: Lil Wayne, Chris Brown, Nicki Minaj, Cardi B, Yo Gotti, MoneyBagg Yo, GloRilla</li>
           <li className="flex gap-3 items-start"><Dot/> Brazen's multi-channel programming slate is his domain — the access his relationships provide cannot be manufactured or purchased</li>
           <li className="flex gap-3 items-start"><Dot/> Personal relationships with Ranked CEO, NLE Choppa, and the podcast ecosystem making the Top 2 strategy immediately executable</li>
+        </ul>
+      </div>
+    </div>
+  </SlideLayout>
+);
+
+const Slide15Team = () => (
+  <SlideLayout overline="15 / 15 — The Team" title="Two founders. Distinct, complementary, non-interchangeable.">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mt-6 flex-1 w-full">
+      <div className="flex flex-col py-6 border-t border-[#F0EEE9]/20">
+        <div className="mb-6 flex gap-5 items-start">
+          <img src="/Headshots/Geoffrey.jpg" alt="Geoffrey" className="w-28 h-28 object-cover rounded-sm border border-[#F0EEE9]/15 grayscale" style={{ objectPosition: 'center top' }} />
+          <div>
+            <h3 className="text-4xl font-black tracking-tighter text-[#F0EEE9] mb-3">GEOFFREY</h3>
+            <div className="text-[10px] font-bold text-[#F0EEE9]/55 uppercase tracking-widest">CEO & Co-Founder / Architecture</div>
+          </div>
+        </div>
+        <ul className="space-y-4 text-[13px] text-[#F0EEE9] font-medium leading-relaxed">
+          <li className="flex gap-3 items-start"><Dot/> Identified the structural gap between music's $54B ecosystem and sports' $500B — traced it to a missing competitive layer — and built the infrastructure to create it before raising a dollar</li>
+          <li className="flex gap-3 items-start"><Dot/> LabelHead is live: scoring engine operational, Founding Season architecture complete, platform active. Built before the raise, not with it.</li>
+          <li className="flex gap-3 items-start"><Dot/> Designed Sovereign as an intentional flywheel — competition generates data, content distributes it, the data compounds into a moat no competitor can replicate after the fact</li>
+          <li className="flex gap-3 items-start"><Dot/> Columbia and USC graduate with formal training in finance, investment analysis, and market design — the same discipline he applies to platform architecture and incentive structures</li>
+        </ul>
+      </div>
+      <div className="flex flex-col py-6 border-t border-[#F0EEE9]/20">
+        <div className="mb-6 flex gap-5 items-start">
+          <img src="/Headshots/BenMarc.jpg" alt="Marcus BenMarc" className="w-28 h-28 object-cover rounded-sm border border-[#F0EEE9]/15" style={{ objectPosition: 'center top' }} />
+          <div>
+            <h3 className="text-4xl font-black tracking-tighter text-[#F0EEE9] mb-3 flex items-baseline gap-2">MARCUS <span className="text-xl text-[#F0EEE9]/55 font-bold tracking-tight">(BENMARC)</span></h3>
+            <div className="text-[10px] font-bold text-[#F0EEE9]/55 uppercase tracking-widest">Creative Director & Co-Founder / Access</div>
+          </div>
+        </div>
+        <ul className="space-y-4 text-[13px] text-[#F0EEE9] font-medium leading-relaxed">
+          <li className="flex gap-3 items-start"><Dot/> Built a reputation as a preferred creative partner to major labels, managers, and artists, earning repeat engagement from organizations including Universal and Warner</li>
+          <li className="flex gap-3 items-start"><Dot/> Directed and produced content for some of music's most influential artists, generating hundreds of millions of views across platforms</li>
+          <li className="flex gap-3 items-start"><Dot/> Designed Brazen's talent and distribution strategy around first-party relationships rather than rented audience acquisition</li>
+          <li className="flex gap-3 items-start"><Dot/> Creative partner to Future, Young Thug, Lil Baby, Gunna, Rod Wave, Moneybagg Yo, and other leading artists</li>
         </ul>
       </div>
     </div>
@@ -1021,7 +1058,7 @@ const Slide16Close = () => (
 export const slides = [
   Slide1, Slide2, Slide3, Slide4, Slide5, Slide5B, 
   Slide6Compact, Slide7, Slide8, Slide9, Slide10, 
-  Slide11, Slide12, Slide13Studio, Slide14, Slide15, Slide16Close
+  Slide11, Slide12, Slide13Studio, Slide14, Slide15Team, Slide16Close
 ];
 
 export const total = 16;
