@@ -1,0 +1,6 @@
+{
+  "name": "Pitch Deck Viewer",
+  "description": "A dark-themed React presentation deck viewer.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
