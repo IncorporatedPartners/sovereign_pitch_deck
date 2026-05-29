@@ -3,12 +3,15 @@ import { motion, AnimatePresence } from 'motion/react';
 import { ChevronLeft, ChevronRight, MessageSquare, X } from 'lucide-react';
 import { slides } from './Slides';
 import type { Screenshot } from './Slides';
-import { speakerNotes } from '../data';
 
 export default function DeckViewer() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [notesOpen, setNotesOpen] = useState(false);
   const [expandedScreenshot, setExpandedScreenshot] = useState<Screenshot | null>(null);
+  const [speakerNotes, setSpeakerNotes] = useState<string[] | null>(null);
+  const [notesPassword, setNotesPassword] = useState('');
+  const [notesError, setNotesError] = useState('');
+  const [notesLoading, setNotesLoading] = useState(false);
 
   const nextSlide = useCallback(() => {
     setCurrentIndex((prev) => (prev < slides.length - 1 ? prev + 1 : prev));
@@ -54,6 +57,33 @@ export default function DeckViewer() {
   }, []);
 
   const CurrentSlide = slides[currentIndex];
+
+  const unlockSpeakerNotes = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setNotesLoading(true);
+    setNotesError('');
+
+    try {
+      const response = await fetch('/api/notes', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password: notesPassword })
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Unable to unlock speaker notes.');
+      }
+
+      setSpeakerNotes(data.notes);
+      setNotesPassword('');
+    } catch (error) {
+      setNotesError(error instanceof Error ? error.message : 'Unable to unlock speaker notes.');
+    } finally {
+      setNotesLoading(false);
+    }
+  };
 
   return (
     <div style={{ background: '#0A0A0A', minHeight: '100vh', width: '100vw' }} className="flex text-[#F0EEE9] overflow-hidden relative font-sans">
@@ -145,7 +175,31 @@ export default function DeckViewer() {
               </button>
             </div>
             <div className="flex-1 p-6 overflow-y-auto">
-              {speakerNotes[currentIndex] ? (
+              {!speakerNotes ? (
+                <form onSubmit={unlockSpeakerNotes} className="flex flex-col gap-4">
+                  <div>
+                    <label htmlFor="speaker-notes-password" className="block text-[10px] font-bold uppercase tracking-widest text-[#F0EEE9]/55 mb-3">
+                      Notes Password
+                    </label>
+                    <input
+                      id="speaker-notes-password"
+                      type="password"
+                      value={notesPassword}
+                      onChange={(event) => setNotesPassword(event.target.value)}
+                      className="w-full rounded border border-white/10 bg-[#0A0A0A] px-3 py-2 text-sm text-[#F0EEE9] outline-none transition-colors focus:border-[#00E5FF]"
+                      autoComplete="current-password"
+                    />
+                  </div>
+                  {notesError && <p className="text-xs font-medium text-[#D4A843]">{notesError}</p>}
+                  <button
+                    type="submit"
+                    disabled={notesLoading || !notesPassword}
+                    className="rounded bg-[#F0EEE9] px-4 py-2 text-xs font-bold uppercase tracking-widest text-[#0A0A0A] transition-opacity disabled:cursor-not-allowed disabled:opacity-40"
+                  >
+                    {notesLoading ? 'Unlocking...' : 'Unlock Notes'}
+                  </button>
+                </form>
+              ) : speakerNotes[currentIndex] ? (
                 <div className="text-sm leading-relaxed text-[#F0EEE9]/70 space-y-4">
                   {speakerNotes[currentIndex].split('\n\n').map((para, i) => (
                     <p key={i}>{para}</p>
