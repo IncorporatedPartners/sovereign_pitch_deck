@@ -108,7 +108,7 @@ const Slide1 = () => (
       <p className="text-xl md:text-3xl text-[#F0EEE9]/70 font-bold tracking-tight">The infrastructure layer for culture.</p>
       
       <div className="pt-16 md:pt-24 mt-16 md:mt-24 border-t border-[#F0EEE9]/10 space-y-4 w-full max-w-2xl text-center">
-        <p className="text-xs font-bold text-[#F0EEE9]/55 uppercase tracking-widest">Seed Round · $650,000 · May 2026 · Confidential</p>
+        <p className="text-xs font-bold text-[#F0EEE9]/55 uppercase tracking-widest">Seed Round · $1,200,000 · May 2026 · Confidential</p>
         <p className="text-xs font-bold text-[#F0EEE9]/80 uppercase tracking-widest">Geoffrey & Marcus (BenMarc)</p>
       </div>
     </div>
@@ -440,6 +440,9 @@ const Slide6Compact = () => (
 
     <div className="mt-6 border-t border-[#F0EEE9]/10 pt-4 text-center text-xs font-medium italic text-[#F0EEE9]/38">
       LabelHead being live before Brazen is built is not a sequencing problem. It is the thesis in action.
+    </div>
+    <div className="mt-3 text-center text-xs font-medium italic text-[#F0EEE9]/38">
+      This raise builds the Brazen MVP alongside the LabelHead GTM activation — so by the time the Series A conversation begins, both properties are operational.
     </div>
   </div>
 );
@@ -851,18 +854,19 @@ const Slide13Studio = ({ onExpandScreenshot }: SlideProps) => (
 );
 
 const Slide14 = () => (
-  <SlideLayout overline="14 / 15 — The Raise" title="$650K to the starting line. Precise. Purposeful. Nothing in here funds the prize.">
+  <SlideLayout overline="14 / 15 — The Raise" title={<span>$1.2M to build two properties and prove the flywheel.<br/>LabelHead's GTM activation. Brazen's MVP. Nine months of runway. The prize pool remains a sponsor conversation — not an investor conversation.</span>}>
     <div className="flex flex-col md:flex-row gap-16 lg:gap-20 mt-8 w-full flex-1">
       <div className="flex-1 w-full flex flex-col">
         <h3 className="text-[10px] font-bold text-[#F0EEE9] uppercase tracking-widest mb-6 border-b border-[#F0EEE9]/20 pb-4">Use of funds</h3>
         <div className="space-y-4">
           {[
             { n: "GTM Activation", d: "Podcast partnerships, Ranked", amt: "$215K", w: "33%" },
+            { n: "Brazen MVP Development", d: "", amt: "$220K · 18%", w: "18%" },
             { n: "Content & Prodn", d: "Demo video, NLE spot", amt: "$135K", w: "21%" },
-            { n: "Ops & Personnel", d: "Founder stipends, community", amt: "$130K", w: "20%" },
-            { n: "Platform & Infra", d: "Scaling, 6-mth cloud", amt: "$70K", w: "11%" },
-            { n: "Legal", d: "Entity formation", amt: "$45K", w: "7%" },
-            { n: "Contingency", d: "", amt: "$55K", w: "8%" }
+            { n: "Operations & Personnel", d: "Founder stipends, community", amt: "$280K · 23%", w: "23%" },
+            { n: "Platform & Infrastructure", d: "Scaling, 6-mth cloud", amt: "$110K · 9%", w: "9%" },
+            { n: "Legal & Compliance", d: "Entity formation", amt: "$65K · 5%", w: "5%" },
+            { n: "Contingency", d: "", amt: "$175K · 15%", w: "15%" }
           ].map((item, i) => (
             <div key={i} className="flex flex-col border-b border-[#F0EEE9]/5 pb-3">
               <div className="flex justify-between items-center mb-3">
@@ -880,6 +884,16 @@ const Slide14 = () => (
             </div>
           ))}
         </div>
+        <div className="mt-4 flex justify-between items-center border-t border-[#F0EEE9]/20 pt-4">
+          <span className="text-[10px] font-bold text-[#F0EEE9]/55 uppercase tracking-widest">Total</span>
+          <span className="text-sm font-black text-[#F0EEE9] tracking-tight">$1,200,000</span>
+        </div>
+        <div className="mt-5 border-t border-[#F0EEE9]/10 pt-5">
+          <div className="text-[10px] font-bold text-[#F0EEE9] uppercase tracking-widest mb-3">What this raise funds</div>
+          <p className="text-[12px] text-[#F0EEE9]/60 font-medium leading-relaxed">
+            Two parallel tracks running simultaneously. LabelHead's GTM activation creates the cultural proof of concept that closes the anchor sponsor. Brazen's MVP development ensures that when the Series A conversation begins, the investor is not buying a promise about the second property — they are looking at two operational platforms, a documented competitive season, and timestamped conviction data accumulating in real time.
+          </p>
+        </div>
       </div>
       
       <div className="flex-1 flex flex-col border-t lg:border-t-0 lg:border-l border-[#F0EEE9]/10 lg:pl-16 pt-8 lg:pt-0">
@@ -887,15 +901,15 @@ const Slide14 = () => (
         <div className="flex flex-col space-y-6 flex-1">
           <div className="flex flex-col py-4 border-b border-[#F0EEE9]/10">
             <div className="text-3xl font-black text-[#F0EEE9]/30 tracking-tighter mb-3">01</div>
-            <p className="text-[13px] text-[#F0EEE9] font-medium leading-relaxed">Demo video and NLE spot in market. Ranked campaign generating organic content footprint.</p>
+            <p className="text-[13px] text-[#F0EEE9] font-medium leading-relaxed">Demo video and NLE spot in market. Ranked campaign generating organic content footprint. Brazen MVP development underway.</p>
           </div>
           <div className="flex flex-col py-4 border-b border-[#F0EEE9]/10">
             <div className="text-3xl font-black text-[#F0EEE9]/30 tracking-tighter mb-3">02</div>
-            <p className="text-[13px] text-[#F0EEE9] font-medium leading-relaxed">Top 2 podcast hosts competing publicly. Selection Sunday broadcast. Top 50 confirmed. 500 competitors live.</p>
+            <p className="text-[13px] text-[#F0EEE9] font-medium leading-relaxed">Top 2 podcast hosts competing publicly. Selection Sunday broadcast. 500 Founding Season competitors live. Brazen MVP operational with Channel One active.</p>
           </div>
           <div className="flex flex-col py-4">
             <div className="text-3xl font-black text-[#F0EEE9] tracking-tighter mb-3">03</div>
-            <p className="text-[13px] font-bold text-[#F0EEE9] leading-relaxed">Anchor sponsor pitch assembled and delivered. Sponsor closes. Prize announced. Series A begins.</p>
+            <p className="text-[13px] font-bold text-[#F0EEE9] leading-relaxed">Anchor sponsor closed. Prize announced. Founding Season data in hand. Series A begins with two live properties and a documented flywheel.</p>
           </div>
         </div>
       </div>
@@ -944,7 +958,7 @@ const Slide16 = () => (
         The competition is already happening.
       </h1>
       <div className="text-sm md:text-base font-bold text-[#D4A843] uppercase tracking-widest mt-6">
-        $650,000 Seed Round
+        $1,200,000 Seed Round
       </div>
     </div>
     
@@ -983,7 +997,7 @@ const Slide16Close = () => (
           Now Raising
         </div>
         <div style={{ fontSize: 'clamp(52px, 5.5vw, 72px)', fontWeight: 500, letterSpacing: '-0.03em', lineHeight: 0.95, color: '#C8A96A', fontVariantNumeric: 'tabular-nums', marginBottom: '8px' }}>
-          $650K
+          $1.2M
         </div>
         <div style={{ fontSize: 13, fontWeight: 300, color: 'rgba(240,238,233,0.35)', letterSpacing: '0.04em', marginBottom: '40px' }}>
           Seed Round
