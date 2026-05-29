@@ -4,170 +4,6 @@ import { ChevronLeft, ChevronRight, MessageSquare, X } from 'lucide-react';
 import { slides } from './Slides';
 import type { Screenshot } from './Slides';
 
-type MobileSection = {
-  overline: string;
-  title: string;
-  body?: string;
-  points?: string[];
-  screenshots?: Screenshot[];
-};
-
-const mobileSections: MobileSection[] = [
-  {
-    overline: '01 / 16 — Sovereign Co.',
-    title: 'The infrastructure layer for culture.',
-    body: 'Seed Round · $650,000 · May 2026 · Confidential'
-  },
-  {
-    overline: '02 / 16 — The Problem',
-    title: 'Music creates cultural attention, but has no participation economy.',
-    points: ['$500B+ sports entertainment ecosystem', '$54B music entertainment ecosystem', '$0 music participation economy']
-  },
-  {
-    overline: '03 / 16 — The Insight',
-    title: "Sports organized competition that already existed. Music never got that layer.",
-    body: 'LabelHead gives music a governed, transparent competitive format built on real artist performance.'
-  },
-  {
-    overline: '04 / 16 — LabelHead',
-    title: 'Build a label. Draft real artists. Compete on cultural instinct.',
-    points: ['Create a fictitious record label', 'Draft five real artists', 'Score based on real-world momentum', 'Win by seeing it before everyone else']
-  },
-  {
-    overline: '05 / 16 — Live Product',
-    title: 'The platform is live at app.labelhead.co.',
-    screenshots: [
-      { label: 'Homepage', src: '/Screenshots/Homepage page.png' },
-      { label: 'Roster', src: '/Screenshots/Roster page.png' },
-      { label: 'Leaderboard', src: '/Screenshots/Leaderboard page.png' }
-    ]
-  },
-  {
-    overline: '06 / 16 — The Solution',
-    title: 'One live property. One multiplier.',
-    points: ['LabelHead is the league', 'Brazen is the network', 'Together they form the infrastructure layer for culture']
-  },
-  {
-    overline: '07 / 16 — Brazen',
-    title: 'Brazen turns competition into daily vertical programming.',
-    body: 'LabelHead is Channel One: the proof that competition creates a daily editorial spine without manufacturing drama.'
-  },
-  {
-    overline: '08 / 16 — Flywheel',
-    title: 'Competition creates content. Content grows the competition. Data compounds.',
-    points: ['Competitors create timestamped predictions', 'The season generates recurring storylines', 'The data layer becomes a B2B asset']
-  },
-  {
-    overline: '09 / 16 — Market',
-    title: 'The wedge is music. The architecture extends beyond it.',
-    body: 'Sovereign starts with the participation economy music never received, then expands the same infrastructure logic across culture.'
-  },
-  {
-    overline: '10 / 16 — Go-To-Market',
-    title: 'Demo, cultural legitimacy, then a Top 50 field.',
-    points: ['Ranked partnership', 'Demo and promo spots', 'Podcast host rivalry', 'Sponsor-ready media package']
-  },
-  {
-    overline: '11 / 16 — Business Model',
-    title: 'Revenue grows each season.',
-    points: ['Anchor sponsorship', 'Invite-only entry and pro features', 'Artist portals and analyst tiers', 'Label intelligence API']
-  },
-  {
-    overline: '12 / 16 — Traction',
-    title: 'The platform is live. This raise is GTM capital.',
-    screenshots: [
-      { label: 'Roster Draft Screen', src: '/Screenshots/Roster page.png' },
-      { label: 'Live Leaderboard', src: '/Screenshots/Leaderboard page.png' },
-      { label: 'Score Breakdown', src: '/Screenshots/Artist Detail Page.png' }
-    ]
-  },
-  {
-    overline: '13 / 16 — The Raise',
-    title: '$650K to the starting line. Nothing in here funds the prize.',
-    points: ['GTM activation', 'Content production', 'Operations and personnel', 'Platform infrastructure', 'Legal and contingency']
-  },
-  {
-    overline: '14 / 16 — Team',
-    title: 'Two founders. Distinct and complementary.',
-    points: ['Geoffrey: architecture, product, scoring infrastructure', 'Marcus: creative direction, production credibility, cultural access']
-  },
-  {
-    overline: '15 / 16 — Closing Argument',
-    title: 'Sports has leagues. Culture has Sovereign.',
-    body: '$650K Seed Round · soverei.gn · labelhead.co'
-  }
-];
-
-function MobileReader({
-  onExpandScreenshot,
-  onOpenNotes
-}: {
-  onExpandScreenshot: (screenshot: Screenshot) => void;
-  onOpenNotes: (index: number) => void;
-}) {
-  return (
-    <div className="md:hidden h-screen w-full overflow-y-auto bg-[#0A0A0A] text-[#F0EEE9]">
-      <div className="sticky top-0 z-30 flex items-center justify-between border-b border-white/10 bg-[#0A0A0A]/95 px-5 py-4 backdrop-blur">
-        <div className="text-[10px] font-bold uppercase tracking-widest text-[#D4A843]">Sovereign Co.</div>
-        <button
-          type="button"
-          onClick={() => onOpenNotes(0)}
-          className="rounded p-2 text-[#F0EEE9]/65 hover:bg-white/10"
-          title="Speaker Notes"
-          aria-label="Speaker Notes"
-        >
-          <MessageSquare className="h-4 w-4" />
-        </button>
-      </div>
-
-      <div className="flex flex-col">
-        {mobileSections.map((section, index) => (
-          <section key={section.overline} className="border-b border-white/10 px-5 py-9">
-            <div className="mb-5 flex items-start justify-between gap-4">
-              <div className="text-[10px] font-bold uppercase tracking-widest text-[#F0EEE9]/45">{section.overline}</div>
-              <button
-                type="button"
-                onClick={() => onOpenNotes(index)}
-                className="shrink-0 rounded border border-white/10 px-2 py-1 text-[9px] font-bold uppercase tracking-widest text-[#F0EEE9]/50"
-              >
-                Notes
-              </button>
-            </div>
-            <h2 className="text-[34px] font-black leading-[0.98] tracking-tighter text-[#F0EEE9]">{section.title}</h2>
-            {section.body && <p className="mt-5 text-sm font-medium leading-relaxed text-[#F0EEE9]/62">{section.body}</p>}
-            {section.points && (
-              <div className="mt-6 flex flex-col gap-3">
-                {section.points.map((point) => (
-                  <div key={point} className="border-t border-white/10 pt-3 text-sm font-semibold leading-snug text-[#F0EEE9]/78">
-                    {point}
-                  </div>
-                ))}
-              </div>
-            )}
-            {section.screenshots && (
-              <div className="mt-6 flex flex-col gap-4">
-                {section.screenshots.map((screenshot) => (
-                  <button
-                    key={screenshot.label}
-                    type="button"
-                    onClick={() => onExpandScreenshot(screenshot)}
-                    className="overflow-hidden rounded border border-white/10 bg-[#141414] text-left"
-                  >
-                    <div className="border-b border-white/10 px-3 py-2 text-[9px] font-bold uppercase tracking-widest text-[#F0EEE9]/55">
-                      {screenshot.label}
-                    </div>
-                    <img src={screenshot.src} alt={screenshot.label} className="aspect-[16/10] w-full object-cover object-top" />
-                  </button>
-                ))}
-              </div>
-            )}
-          </section>
-        ))}
-      </div>
-    </div>
-  );
-}
-
 export default function DeckViewer() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [notesOpen, setNotesOpen] = useState(false);
@@ -222,11 +58,6 @@ export default function DeckViewer() {
 
   const CurrentSlide = slides[currentIndex];
 
-  const openMobileNotes = (index: number) => {
-    setCurrentIndex(Math.min(index, slides.length - 1));
-    setNotesOpen(true);
-  };
-
   const unlockSpeakerNotes = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setNotesLoading(true);
@@ -257,14 +88,12 @@ export default function DeckViewer() {
   return (
     <div style={{ background: '#0A0A0A', minHeight: '100vh', width: '100vw' }} className="flex text-[#F0EEE9] overflow-hidden relative font-sans">
       
-      <MobileReader onExpandScreenshot={setExpandedScreenshot} onOpenNotes={openMobileNotes} />
-
       {/* Main Presentation Stage */}
-      <div className={`hidden md:flex flex-1 flex-col transition-all duration-500 ease-in-out relative ${notesOpen ? 'xl:mr-[400px]' : ''}`}>
+      <div className={`flex-1 flex flex-col transition-all duration-500 ease-in-out relative ${notesOpen ? 'xl:mr-[400px]' : ''}`}>
         
-        <div className="flex-1 flex items-center justify-center p-0 md:p-6 lg:p-12 overflow-hidden h-[calc(100vh-64px)]">
+        <div className="flex-1 flex items-center justify-center p-2 md:p-6 lg:p-12 overflow-hidden h-[calc(100dvh-64px)]">
           <div 
-            className="w-full h-full lg:max-h-[85vh] lg:aspect-video rounded-none md:rounded-lg border-0 md:border border-white/5 shadow-sm overflow-hidden relative flex flex-col"
+            className="deck-frame w-full h-full lg:max-h-[85vh] lg:aspect-video rounded md:rounded-lg border border-white/5 shadow-sm overflow-hidden relative flex flex-col"
             style={{ background: '#0A0A0A' }}
           >
             <AnimatePresence mode="wait">
@@ -274,7 +103,7 @@ export default function DeckViewer() {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -15, scale: 1.01 }}
                 transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                className="w-full h-full bg-[#0A0A0A]"
+                className="deck-slide-surface w-full h-full bg-[#0A0A0A]"
               >
                 <CurrentSlide onExpandScreenshot={setExpandedScreenshot} />
               </motion.div>
@@ -283,7 +112,7 @@ export default function DeckViewer() {
         </div>
 
         {/* Controls Bar */}
-        <div className="h-16 border-t border-white/10 bg-[#0A0A0A] flex items-center justify-between px-6 z-10 shrink-0">
+        <div className="h-16 border-t border-white/10 bg-[#0A0A0A] flex items-center justify-between px-3 md:px-6 z-10 shrink-0">
           <div className="flex items-center space-x-2 text-[#F0EEE9]/55 font-bold text-xs uppercase tracking-widest">
             <span className="text-[#F0EEE9]">{currentIndex + 1}</span>
             <span>/</span>
@@ -300,7 +129,7 @@ export default function DeckViewer() {
             </div>
           </div>
 
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2 md:space-x-4">
             <button 
               onClick={() => setNotesOpen(!notesOpen)}
               className={`p-2 rounded transition-colors ${notesOpen ? 'bg-[#F0EEE9] text-[#0A0A0A]' : 'hover:bg-[#141414] text-[#F0EEE9]/55'}`}
@@ -308,7 +137,7 @@ export default function DeckViewer() {
             >
               <MessageSquare className="w-4 h-4" />
             </button>
-            <div className="flex items-center space-x-2 border-l border-white/10 pl-4">
+            <div className="flex items-center space-x-1 md:space-x-2 border-l border-white/10 pl-2 md:pl-4">
               <button 
                 onClick={prevSlide}
                 disabled={currentIndex === 0}

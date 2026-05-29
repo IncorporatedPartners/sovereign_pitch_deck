@@ -12,3 +12,50 @@ body {
   color: #1a1a1a;
   overflow: hidden; /* App takes full screen */
 }
+
+@media (max-width: 767px) {
+  .deck-slide-surface > div {
+    padding: 24px 20px !important;
+  }
+
+  .deck-slide-surface h1 {
+    font-size: 44px !important;
+    line-height: 0.98 !important;
+  }
+
+  .deck-slide-surface h2 {
+    font-size: 30px !important;
+    line-height: 1.04 !important;
+    margin-bottom: 24px !important;
+  }
+
+  .deck-slide-surface h3 {
+    font-size: 26px !important;
+    line-height: 1.08 !important;
+  }
+
+  .deck-slide-surface [style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  .deck-slide-surface [class*="grid-cols-2"],
+  .deck-slide-surface [class*="grid-cols-3"],
+  .deck-slide-surface [class*="grid-cols-[1.2fr_0.8fr]"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  .deck-slide-surface [class*="md:flex-row"] {
+    flex-direction: column !important;
+  }
+
+  .deck-slide-surface img {
+    max-width: 100%;
+  }
+
+  .deck-slide-surface p,
+  .deck-slide-surface li,
+  .deck-slide-surface span,
+  .deck-slide-surface div {
+    overflow-wrap: anywhere;
+  }
+}
