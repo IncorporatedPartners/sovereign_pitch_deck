@@ -91,9 +91,9 @@ export default function DeckViewer() {
       {/* Main Presentation Stage */}
       <div className={`flex-1 flex flex-col transition-all duration-500 ease-in-out relative ${notesOpen ? 'xl:mr-[400px]' : ''}`}>
         
-        <div className="flex-1 flex items-center justify-center p-2 md:p-6 lg:p-12 overflow-hidden h-[calc(100dvh-64px)]">
+        <div className="flex-1 flex items-center justify-center p-0 md:p-6 lg:p-12 overflow-hidden h-[calc(100vh-64px)]">
           <div 
-            className="deck-frame w-full h-full lg:max-h-[85vh] lg:aspect-video rounded md:rounded-lg border border-white/5 shadow-sm overflow-hidden relative flex flex-col"
+            className="w-full h-full lg:max-h-[85vh] lg:aspect-video rounded-none md:rounded-lg border-0 md:border border-white/5 shadow-sm overflow-hidden relative flex flex-col"
             style={{ background: '#0A0A0A' }}
           >
             <AnimatePresence mode="wait">
@@ -103,7 +103,7 @@ export default function DeckViewer() {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -15, scale: 1.01 }}
                 transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                className="deck-slide-surface w-full h-full bg-[#0A0A0A]"
+                className="w-full h-full bg-[#0A0A0A]"
               >
                 <CurrentSlide onExpandScreenshot={setExpandedScreenshot} />
               </motion.div>
@@ -112,7 +112,7 @@ export default function DeckViewer() {
         </div>
 
         {/* Controls Bar */}
-        <div className="h-16 border-t border-white/10 bg-[#0A0A0A] flex items-center justify-between px-3 md:px-6 z-10 shrink-0">
+        <div className="h-16 border-t border-white/10 bg-[#0A0A0A] flex items-center justify-between px-6 z-10 shrink-0">
           <div className="flex items-center space-x-2 text-[#F0EEE9]/55 font-bold text-xs uppercase tracking-widest">
             <span className="text-[#F0EEE9]">{currentIndex + 1}</span>
             <span>/</span>
@@ -129,7 +129,7 @@ export default function DeckViewer() {
             </div>
           </div>
 
-          <div className="flex items-center space-x-2 md:space-x-4">
+          <div className="flex items-center space-x-4">
             <button 
               onClick={() => setNotesOpen(!notesOpen)}
               className={`p-2 rounded transition-colors ${notesOpen ? 'bg-[#F0EEE9] text-[#0A0A0A]' : 'hover:bg-[#141414] text-[#F0EEE9]/55'}`}
@@ -137,7 +137,7 @@ export default function DeckViewer() {
             >
               <MessageSquare className="w-4 h-4" />
             </button>
-            <div className="flex items-center space-x-1 md:space-x-2 border-l border-white/10 pl-2 md:pl-4">
+            <div className="flex items-center space-x-2 border-l border-white/10 pl-4">
               <button 
                 onClick={prevSlide}
                 disabled={currentIndex === 0}
