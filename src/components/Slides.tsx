@@ -923,6 +923,80 @@ const Slide14 = () => (
   </SlideLayout>
 );
 
+const Slide14Raise = () => (
+  <div className="flex h-full w-full flex-col overflow-hidden p-8 md:p-12 lg:p-20" style={{ background: '#0A0A0A', color: '#F0EEE9' }}>
+    <div className="mb-4 text-[10px] font-bold uppercase tracking-widest text-[#F0EEE9]/55">14 / 15 - The Raise</div>
+
+    <div className="mb-8 max-w-6xl">
+      <h2 className="text-4xl md:text-5xl lg:text-[52px] font-black tracking-tighter leading-none text-[#F0EEE9]">
+        $1.2M to build two properties and prove the flywheel.
+      </h2>
+      <p className="mt-4 max-w-5xl text-[15px] font-medium leading-relaxed text-[#F0EEE9]/58">
+        LabelHead's GTM activation. Brazen's MVP. Nine months of runway. The prize pool remains a sponsor conversation - not an investor conversation.
+      </p>
+    </div>
+
+    <div className="grid min-h-0 flex-1 grid-cols-[1.02fr_0.98fr] gap-10">
+      <div className="flex min-h-0 flex-col">
+        <h3 className="mb-4 border-b border-[#F0EEE9]/20 pb-3 text-[10px] font-bold uppercase tracking-widest text-[#F0EEE9]">Use of funds</h3>
+        <div className="grid grid-cols-2 gap-x-5 gap-y-3">
+          {[
+            { n: "GTM Activation", d: "Podcast partnerships, Ranked", amt: "$215K", w: "33%" },
+            { n: "Brazen MVP Development", d: "MVP build, Channel One", amt: "$220K - 18%", w: "18%" },
+            { n: "Content & Prodn", d: "Demo video, NLE spot", amt: "$135K", w: "21%" },
+            { n: "Operations & Personnel", d: "Founder stipends, community", amt: "$280K - 23%", w: "23%" },
+            { n: "Platform & Infrastructure", d: "Scaling, 6-mth cloud", amt: "$110K - 9%", w: "9%" },
+            { n: "Legal & Compliance", d: "Entity formation", amt: "$65K - 5%", w: "5%" },
+            { n: "Contingency", d: "Runway buffer", amt: "$175K - 15%", w: "15%" }
+          ].map((item, i) => (
+            <div key={i} className="border-b border-[#F0EEE9]/7 pb-3">
+              <div className="mb-2 flex items-start justify-between gap-3">
+                <div className="min-w-0">
+                  <div className="text-[12px] font-bold leading-tight text-[#F0EEE9]">{item.n}</div>
+                  <div className="mt-1 text-[10px] font-medium leading-tight text-[#F0EEE9]/48">{item.d}</div>
+                </div>
+                <div className="shrink-0 text-[12px] font-black tracking-tight text-[#F0EEE9]">{item.amt}</div>
+              </div>
+              <div className="h-1 w-full overflow-hidden bg-[#141414]">
+                <div className="h-full bg-[#F0EEE9]" style={{ width: item.w }} />
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-4 flex items-center justify-between border-t border-[#F0EEE9]/20 pt-3">
+          <span className="text-[10px] font-bold uppercase tracking-widest text-[#F0EEE9]/55">Total</span>
+          <span className="text-sm font-black tracking-tight text-[#F0EEE9]">$1,200,000</span>
+        </div>
+
+        <div className="mt-4 border border-[#F0EEE9]/10 p-4">
+          <div className="mb-2 text-[10px] font-bold uppercase tracking-widest text-[#F0EEE9]">What this raise funds</div>
+          <p className="text-[11px] font-medium leading-relaxed text-[#F0EEE9]/58">
+            Two parallel tracks running simultaneously: LabelHead's GTM activation creates the cultural proof that closes the anchor sponsor, while Brazen's MVP gives the Series A conversation two operational platforms, a documented competitive season, and conviction data accumulating in real time.
+          </p>
+        </div>
+      </div>
+
+      <div className="flex min-h-0 flex-col border-l border-[#F0EEE9]/10 pl-10">
+        <h3 className="mb-4 border-b border-[#F0EEE9]/20 pb-3 text-[10px] font-bold uppercase tracking-widest text-[#F0EEE9]">Three milestones this capital achieves</h3>
+        <div className="grid flex-1 grid-rows-3 gap-4">
+          {[
+            "Demo video and NLE spot in market. Ranked campaign generating organic content footprint. Brazen MVP development underway.",
+            "Top 2 podcast hosts competing publicly. Selection Sunday broadcast. 500 Founding Season competitors live. Brazen MVP operational with Channel One active.",
+            "Anchor sponsor closed. Prize announced. Founding Season data in hand. Series A begins with two live properties and a documented flywheel."
+          ].map((text, i) => (
+            <div key={i} className="border-b border-[#F0EEE9]/10 pb-4 last:border-b-0">
+              <div className={`mb-3 text-3xl font-black tracking-tighter ${i === 2 ? 'text-[#F0EEE9]' : 'text-[#F0EEE9]/30'}`}>
+                {String(i + 1).padStart(2, '0')}
+              </div>
+              <p className={`text-[13px] leading-relaxed text-[#F0EEE9] ${i === 2 ? 'font-bold' : 'font-medium'}`}>{text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+);
 const Slide15 = () => (
   <SlideLayout overline="15 / 15 — The Team" title="Two founders. Distinct, complementary, non-interchangeable.">
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mt-6 flex-1 w-full">
@@ -1033,7 +1107,7 @@ const Slide16Close = () => (
 export const slides = [
   Slide1, Slide2, Slide3, Slide4, Slide5, Slide5B, 
   Slide6Compact, Slide7, Slide8, Slide9, Slide10, 
-  Slide11, Slide12, Slide13Studio, Slide14, Slide15, Slide16Close
+  Slide11, Slide12, Slide13Studio, Slide14Raise, Slide15, Slide16Close
 ];
 
 export const total = 16;
