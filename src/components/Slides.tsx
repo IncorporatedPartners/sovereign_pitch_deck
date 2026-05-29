@@ -449,7 +449,7 @@ const Slide6Compact = () => (
 
 const Slide7 = () => (
   <SlideLayout overline="07 / 15 — Brazen Network" title="Brazen is a vertical content network. LabelHead proves the programming works before a frame is shot.">
-    <div style={{ display: 'flex', flexDirection: 'column', height: '100%', overflow: 'hidden' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', height: '100%', overflow: 'hidden', paddingTop: '14px' }}>
       
       <div style={{
         background: '#141414', border: '0.5px solid rgba(240,238,233,0.15)',
