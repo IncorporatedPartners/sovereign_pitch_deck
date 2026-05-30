@@ -202,7 +202,7 @@ const Slide3 = () => (
           </div>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18, color: 'rgba(240,238,233,0.06)' }}>·</div>
           <div style={{ background: 'transparent', border: '0.5px solid rgba(240,238,233,0.06)', borderRadius: '3px', padding: '0 16px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-            <div style={{ fontSize: 12, fontWeight: 500, color: 'rgba(240,238,233,0.12)' }}>No ecosystem</div>
+            <div style={{ fontSize: 12, fontWeight: 500, color: 'rgba(240,238,233,0.12)' }}>$54B ecosystem</div>
             <div style={{ fontSize: 11, fontWeight: 300, color: 'rgba(240,238,233,0.08)' }}>$0 participation economy</div>
           </div>
         </div>
