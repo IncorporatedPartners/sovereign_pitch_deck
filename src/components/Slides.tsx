@@ -185,7 +185,7 @@ const Slide3 = () => (
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18, color: 'rgba(212,168,67,0.40)' }}>→</div>
           <div style={{ background: 'rgba(212,168,67,0.09)', border: '0.5px solid rgba(212,168,67,0.35)', borderRadius: '3px', padding: '0 16px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
             <div style={{ fontSize: 13, fontWeight: 500, color: '#F0EEE9', mb: 1 }}>$500B+ ecosystem</div>
-            <div style={{ fontSize: 11, fontWeight: 300, color: 'rgba(212,168,67,0.65)' }}>Betting, fantasy, broadcast</div>
+            <div style={{ fontSize: 11, fontWeight: 300, color: 'rgba(212,168,67,0.65)' }}>$200B+ participation economy (betting, fantasy, prediction markets)</div>
           </div>
         </div>
 
